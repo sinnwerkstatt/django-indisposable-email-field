@@ -1,2 +1,2 @@
 # django-indisposable-email-field
-A form-Field that will check if the given email-address is an Disposable Email Address.
+A Django form-Field that will check if the given email-address is an Disposable Email Address.
