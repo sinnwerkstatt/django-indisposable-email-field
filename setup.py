@@ -3,8 +3,8 @@ from setuptools import setup
 
 setup(
         name='django-indisposable-email-field',
-        version='0.1',
-        packages=['indisposable_email_field'],
+        version='0.1.1',
+        packages=['indisposable_email_field','indisposable_email_field.migrations'],
         url='https://github.com/sinnwerkstatt/django-indisposable-email-field',
         license='Apache License 2.0',
         author='Andreas Nüßlein',
