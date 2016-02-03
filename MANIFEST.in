@@ -1,1 +1,2 @@
 recursive-include indisposable_email_field/locale *
+recursive-include indisposable_email_field/migrations *

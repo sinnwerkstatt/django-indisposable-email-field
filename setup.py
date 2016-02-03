@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 import os
-from setuptools import setup, find_packages
-
-with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
-    README = readme.read()
+from setuptools import setup
 
 setup(
         name='django-indisposable-email-field',
-        version='0.1.2',
+        version='0.1.6',
         packages=['indisposable_email_field'],
         include_package_data=True,
         url='https://github.com/sinnwerkstatt/django-indisposable-email-field',
