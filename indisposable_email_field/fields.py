@@ -1,17 +1,14 @@
-from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
 from django.forms import EmailField
-from django.utils.translation import ugettext_lazy as _
 
 from indisposable_email_field.models import DisposableDomainName
+from indisposable_email_field.validators import validate_indisposable_email_domain
 
 
-def custom_email_validator(value):
-    domainname = value.rsplit('@')[-1]
-    domain = DisposableDomainName.objects.filter(value=domainname)
-    if domain:
-        raise ValidationError(_('This domain name is not valid'))
+# NOTE: This is done for reverse compatibility, in case anybody was importing
+#       custom_email_validator from here
+custom_email_validator = validate_indisposable_email_domain
 
 
 class IndisposableEmailField(EmailField):
-    default_validators = [validate_email, custom_email_validator]
+    default_validators = [validate_email, validate_indisposable_email_domain]
